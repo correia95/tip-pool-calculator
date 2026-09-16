@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e7490" />
+
+    <title>Tip Pool Calculator — split pooled tips by hours &amp; role</title>
+    <meta
+      name="description"
+      content="Split a pooled tip amount among staff by hours worked and role weight, with shares that always add up exactly. Free, private, runs entirely in your browser."
+    />
+    <link rel="canonical" href="https://tip-pool-calculator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tip Pool Calculator" />
+    <meta property="og:description" content="Split pooled tips by hours and role weight, exactly. Free, in your browser." />
+    <meta property="og:url" content="https://tip-pool-calculator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://tip-pool-calculator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tip Pool Calculator" />
+    <meta name="twitter:description" content="Split pooled tips by hours and role weight, exactly. Free, in your browser." />
+    <meta name="twitter:image" content="https://tip-pool-calculator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tip Pool Calculator",
+        "url": "https://tip-pool-calculator.correia95.workers.dev/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Splits a pooled tip amount among staff proportionally to hours worked and an optional role weight, using the largest-remainder method so every share adds up to exactly the pool."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What should I set the weight to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Leave it at 1 for a pure hours-based split. Raise it above 1 for roles that customarily get a larger share per hour (like servers over bussers), or below 1 for the reverse - there's no universal standard, so use whatever your workplace agrees on."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why doesn't a simple hours split give clean numbers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Splitting any pool into shares that don't divide evenly leaves fractional cents - this calculator distributes those fairly rather than rounding everyone down (which would lose money) or up (which would exceed the pool)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this handle tax or reporting requirements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No - this only calculates the split amounts. Tip reporting and withholding rules vary by jurisdiction; check your local requirements separately."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      .tt-nav { box-sizing: border-box; width: 100%; margin: 0; background: #f1f1f4; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .tt-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; text-decoration: none; color: #3730a3; font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .tt-nav a:hover { color: #1e1b4b; text-decoration: underline; }
+      .tt-nav svg { width: 14px; height: 14px; flex: none; }
+      @media (prefers-color-scheme: dark) {
+        .tt-nav { background: #15151b; border-bottom-color: rgba(255, 255, 255, 0.12); }
+        .tt-nav a { color: #c7d2fe; }
+        .tt-nav a:hover { color: #e0e7ff; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="tt-nav"><a href="https://tinytools.correia95.workers.dev/" aria-label="TinyTools home — all tools and games"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg><span>TinyTools</span></a></nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This tip pool calculator needs JavaScript to run in your browser.
+      </p>
+    </noscript>
+  </body>
+</html>
